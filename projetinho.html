@@ -1,0 +1,80 @@
+<meta charset="UTF-8">
+<title>IMC certo</title>
+<h2>Qual é o IMC correto</h2>
+<link href = "css/projetinho.css" type="text/css" rel="stylesheet" />
+<br>
+<div>
+    <table width="900" align="center" border="1">
+        <tr>
+            <td id="td2">Normal, quando o resultado está entre 18,5 e 24,9 kg/m2; </td>
+    <br>
+    <td id="td1">  Magreza, quando o resultado é menor que 18,5 kg/m2; </td>
+<br>
+<td id="td3">Sobrepeso, quando o resultado está entre 24,9 e 30 kg/m2; </td>
+<br>
+<td id="td4">Obesidade, quando o resultado é maior que 30 kg/m2. </td>
+
+</tr>
+</table>
+<p>
+</div>
+
+
+<h2>Sua altura:</h2>
+<input/>
+<button>Enviar</button>
+
+<h2>Seu peso:</h2>
+<input/>
+<button>Enviar</button>
+
+</p>
+<script>
+    var botao = document.querySelector("button")
+    var botao2 =  document.querySelector("button")
+
+function  pulaLinha() {
+    document.write("<br>")
+}
+ function mostra(frase) {
+     document.write(frase)
+     pulaLinha()
+     
+ }
+function CalculaImc(altura,peso) {
+    return peso/ (altura * altura)
+}
+var nome = prompt("Informe o seu nome");
+//var alturaInformada = prompt(nome + ", informe sua altura");
+//var pesoInformado = prompt(nome + ", informe seu peso");
+
+var imc = Math.round(CalculaImc(botao, botao2));
+
+mostra(nome + ", o seu IMC é " + imc);
+if(imc < 18.5) {
+
+mostra("Você está abaixo do recomendado")
+
+}
+if(imc < 18.5) {
+
+mostra("Você está abaixo do recomendado");
+
+}
+
+if (imc > 24.9) {
+    mostra("Você esta sobrepeso")
+}
+
+if(imc > 35) {
+
+mostra("Você está acima do recomendado");
+}
+if (imc >= 18.5 && imc <= 24.9) {
+     
+        mostra("Seu IMC esta otimo")
+    }
+
+
+</script>
+<img src="IMC.jpg" width="65%">
