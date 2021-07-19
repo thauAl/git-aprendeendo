@@ -1,5 +1,5 @@
 var botao = document.querySelector("button")
-var botao2 =  document.querySelector("button")
+console.log(botao)
 
 function  pulaLinha() {
 document.write("<br>")
@@ -9,16 +9,24 @@ function mostra(frase) {
  pulaLinha()
  
 }
-function CalculaImc(altura,peso) {
-return peso/ (altura * altura)
-}
+//function CalculaImc(altura,peso) {
+//return peso/ (altura * altura)
+//}
+botao.addEventListener("click", function(event){
+    event.preventDefault(event)
+  var dados = document.querySelector("#inputs-dados")
+  //console.log(dados)
+  var peso  = dados.peso.value
+  var altura = dados.altura.value
+
+  
+    
 var nome = prompt("Informe o seu nome");
-//var alturaInformada = prompt(nome + ", informe sua altura");
-//var pesoInformado = prompt(nome + ", informe seu peso");
 
-var imc = Math.round(CalculaImc(botao, botao2));
 
-mostra(nome + ", o seu IMC é " + imc);
+var imc = Math.round(CalculaImc(altura, peso));
+
+mostra(nome,",o seu IMC é " + imc);
 if(imc < 18.5) {
 
 mostra("Você está abaixo do recomendado")
@@ -39,6 +47,11 @@ if(imc > 35) {
 mostra("Você está acima do recomendado");
 }
 if (imc >= 18.5 && imc <= 24.9) {
- 
-    mostra("Seu IMC esta otimo")
+   var imcOtimo = document.querySelector("#IMC-otimo")
+   
+   imcOtimo.style.color = "green"
 }
+})
+function CalculaImc(altura,peso) {
+    return peso/ (altura * altura)
+    }
